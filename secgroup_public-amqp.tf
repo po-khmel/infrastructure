@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "public-amqp" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "public-amqp-5671" {
+resource "openstack_networking_secgroup_rule_v2" "public-amqp-rule1" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"

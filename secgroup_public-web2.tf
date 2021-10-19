@@ -6,7 +6,7 @@ resource "openstack_networking_secgroup_v2" "public-web2" {
 
 variable "web-ports" {
   description = "Web ports"
-  type        = "list"
+  type        = list(string)
   default     = ["80", "443", "8080"]
 }
 

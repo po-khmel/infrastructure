@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "public-ping" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "b650820a-0a7e-4ba8-ba2b-f14656b9388d" {
+resource "openstack_networking_secgroup_rule_v2" "public-ping_rule1" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "icmp"
