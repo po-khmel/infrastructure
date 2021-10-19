@@ -1,9 +1,9 @@
 
-resource "openstack_compute_instance_v2" "incoming" {
-  name        = "${var.incoming-dns}"
+resource "openstack_compute_instance_v2" "ftp" {
+  name        = "${var.ftp}"
   image_name  = "${var.centos_image}"
   flavor_name = "small"
-  key_pair    = "cloud2"
+  key_pair    = "cloud"
 
   # TODO: tighten up secgroups
   security_groups = ["egress", "public-ssh", "public-web2", "public-ftp"]
@@ -16,10 +16,3 @@ resource "openstack_compute_instance_v2" "incoming" {
   }
 }
 
-#resource "aws_route53_record" "incoming" {
-#  zone_id = "${var.zone_galaxyproject_eu}"
-#  name    = "${var.incoming-dns}"
-#  type    = "A"
-#  ttl     = "600"
-#  records = ["${openstack_compute_instance_v2.incoming.access_ip_v4}"]
-#}

@@ -1,9 +1,0 @@
-egress 
-public-ssh
-public-web2
-public-ftp
-ufr-ingress
-public-ping
-public
-public-amqp
-
