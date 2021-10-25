@@ -3,7 +3,7 @@ resource "openstack_compute_instance_v2" "rabbitmq" {
   image_name      = "${var.centos_image}"
   flavor_name     = "small"
   key_pair        = "cloud"
-  security_groups = ["egress", "public-ssh", "public-ping", "public-web2", "public-amqp"]
+  security_groups = ["egress", "public-ssh", "public-ping", "public-web2", "public-amqp","default"]
 
   network {
     name = "public_net"

@@ -31,3 +31,5 @@ override.tf.json
 # End of https://www.gitignore.io/api/terraform
 .venv
 .vault_password
+terraform.tfstate
+terraform.tfstate.backup
