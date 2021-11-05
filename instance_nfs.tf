@@ -2,7 +2,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
 
   name            = "condor_nfs"
   image_name      = "${var.vgcn_image}"
-  flavor_name     = "small"
+  flavor_name     = "large"
   key_pair        = "cloud"
   security_groups = ["public"]
 
