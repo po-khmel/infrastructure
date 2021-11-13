@@ -33,3 +33,4 @@ override.tf.json
 .vault_password
 terraform.tfstate
 terraform.tfstate.backup
+galaxy-it
