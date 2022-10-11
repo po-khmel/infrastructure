@@ -6,7 +6,7 @@ variable "centos8_image" {
   default = "CentOS-8-ec2-8.4.2105-20210603.0.x86_64"
 }
 variable "ubuntu20-04_image" {
-  default = "41b5f4cd-849f-48f7-8ee9-59b59f3f5fbf"
+  default = "79f390c9-88ce-418e-9325-c372ba29473c"
 }
 variable "vgcn_image"{
   type = map(string)
