@@ -1,6 +1,6 @@
 
 resource "openstack_compute_instance_v2" "mastervm" {
-  name            = "Master.galaxyproject.it"
+  name            = "usegalaxy.controlvm"
   image_id      = "${var.ubuntu20-04_image}"
   flavor_name     = "small"
   key_pair        = "cloud" 

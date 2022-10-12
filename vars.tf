@@ -15,9 +15,7 @@ variable "vgcn_image"{
     "id" = "d92781a6-bbb5-4238-8fd7-c38d2cc8b68f"
 }
 }
-variable "ftp" {
-  default = "ftp.galaxyproject.it"
-}
+
 variable "nfs_disk_size" {
   default = 3
 }

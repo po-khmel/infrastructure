@@ -1,6 +1,6 @@
 
 resource "openstack_compute_instance_v2" "vgcn-cm" {
-  name            = "condor-central-manager.galaxyproject.it"
+  name            = "usegalaxy.condor-central-manager"
   image_name      = "${var.vgcn_image.name}"
   flavor_name     = "small"
   key_pair        = "cloud" 

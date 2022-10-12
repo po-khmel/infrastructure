@@ -1,6 +1,6 @@
 
 resource "openstack_compute_instance_v2" "ftp" {
-  name        = "${var.ftp}"
+  name        = "usegalaxy.ftp"
   image_name  = "${var.centos_image}"
   flavor_name = "small"
   key_pair    = "cloud"

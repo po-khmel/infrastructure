@@ -1,5 +1,5 @@
 resource "openstack_compute_instance_v2" "galaxy" {
-  name            = "galaxy.usegalaxy.it"
+  name            = "usegalaxy.galaxy"
   image_name      = "${var.centos8_image}"
   flavor_name     = "large"
   key_pair        = "cloud"

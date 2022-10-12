@@ -1,5 +1,5 @@
 resource "openstack_compute_instance_v2" "rabbitmq" {
-  name            = "rabbit.internal.galaxyproject.it"
+  name            = "usegalaxy.rabbitmq"
   image_name      = "${var.centos8_image}"
   flavor_name     = "small"
   key_pair        = "cloud"
