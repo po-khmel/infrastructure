@@ -12,7 +12,7 @@ variable "netz_count" {
 
 variable "netz" {
   description = "Internal networks"
-  type        = "list"
+  type        = list
   default     = ["192.52.32.0/20", "10.0.0.0/8", "132.230.0.0/16"]
 }
 
@@ -33,16 +33,16 @@ variable "jenkins_image" {
 }
 
 variable "sg_webservice" {
-  type    = "list"
+  type    = list
   default = ["egress", "ufr-ssh", "public-ping", "public-web2"]
 }
 
 variable "sg_webservice-pubssh" {
-  type    = "list"
+  type    = list
   default = ["egress", "public-ssh", "public-ping", "public-web2"]
 }
 
 variable "sg_mumble-pubssh" {
-  type    = "list"
+  type    = list
   default = ["egress", "public-ssh", "public-ping", "public-mumble"]
 }
