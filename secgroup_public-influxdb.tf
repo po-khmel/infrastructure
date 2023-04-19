@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "public-influxdb" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "7321459b-815a-4f0c-a5fd-5740f0c4da1c" {
+resource "openstack_networking_secgroup_rule_v2" "public-influxdb-ingress-ipv4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"

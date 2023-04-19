@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "Public" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "e79fa4e2-bca0-42b4-b864-67e6a750dbe8" {
+resource "openstack_networking_secgroup_rule_v2" "Public-ingress-ports4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -14,7 +14,7 @@ resource "openstack_networking_secgroup_rule_v2" "e79fa4e2-bca0-42b4-b864-67e6a7
   security_group_id = "${openstack_networking_secgroup_v2.Public.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "05135b3c-2cbf-4892-a5c6-f95bb539beb1" {
+resource "openstack_networking_secgroup_rule_v2" "Public-ingress-port3389-ipv4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -24,19 +24,19 @@ resource "openstack_networking_secgroup_rule_v2" "05135b3c-2cbf-4892-a5c6-f95bb5
   security_group_id = "${openstack_networking_secgroup_v2.Public.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "81cece52-6293-47de-8bc2-502e16efa9dc" {
+resource "openstack_networking_secgroup_rule_v2" "Public-egress-ports6" {
   direction         = "egress"
   ethertype         = "IPv6"
   security_group_id = "${openstack_networking_secgroup_v2.Public.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "c1b291ec-0147-4022-bcae-0af6cb390f78" {
+resource "openstack_networking_secgroup_rule_v2" "Public-egress-ports4" {
   direction         = "egress"
   ethertype         = "IPv4"
   security_group_id = "${openstack_networking_secgroup_v2.Public.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "da697705-5849-492a-902e-b62f4e9a8377" {
+resource "openstack_networking_secgroup_rule_v2" "Public-ingress-ssh" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -46,7 +46,7 @@ resource "openstack_networking_secgroup_rule_v2" "da697705-5849-492a-902e-b62f4e
   security_group_id = "${openstack_networking_secgroup_v2.Public.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "e01d7f4e-367e-453f-b716-3dca578d669d" {
+resource "openstack_networking_secgroup_rule_v2" "Public-ingress-http" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"

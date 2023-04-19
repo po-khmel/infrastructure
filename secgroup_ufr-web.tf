@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "ufr-web" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "in-80" {
+resource "openstack_networking_secgroup_rule_v2" "ufr-web-ingress-80" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -15,7 +15,7 @@ resource "openstack_networking_secgroup_rule_v2" "in-80" {
   security_group_id = "${openstack_networking_secgroup_v2.ufr-web.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "in-443" {
+resource "openstack_networking_secgroup_rule_v2" "ufr-web-ingress-443" {
   direction = "ingress"
   ethertype = "IPv4"
   protocol  = "tcp"

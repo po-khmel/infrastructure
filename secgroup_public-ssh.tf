@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "public-ssh" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "aa57e62d-6644-40fb-ad6f-05b50e14bb54" {
+resource "openstack_networking_secgroup_rule_v2" "public-ssh-ingress-ipv4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -13,7 +13,7 @@ resource "openstack_networking_secgroup_rule_v2" "aa57e62d-6644-40fb-ad6f-05b50e
   security_group_id = "${openstack_networking_secgroup_v2.public-ssh.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "69bda1a1-67d2-4999-b14a-573ead46073c" {
+resource "openstack_networking_secgroup_rule_v2" "public-ssh-ingress-ipv6" {
   direction         = "ingress"
   ethertype         = "IPv6"
   protocol          = "tcp"

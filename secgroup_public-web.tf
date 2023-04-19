@@ -3,7 +3,7 @@ resource "openstack_networking_secgroup_v2" "public-web" {
   description = "[tf] Allow public HTTP + HTTPS connections"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "5cbd5183-8918-4d74-aa9b-302ebe813d8c" {
+resource "openstack_networking_secgroup_rule_v2" "public-web-80-ipv4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -12,7 +12,7 @@ resource "openstack_networking_secgroup_rule_v2" "5cbd5183-8918-4d74-aa9b-302ebe
   security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "ef536597-385f-45b1-8895-f0553595c8fb" {
+resource "openstack_networking_secgroup_rule_v2" "public-web-443-ipv4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -21,7 +21,7 @@ resource "openstack_networking_secgroup_rule_v2" "ef536597-385f-45b1-8895-f05535
   security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "5cbd5183-8918-4d74-aa9b-302ebe813d8z" {
+resource "openstack_networking_secgroup_rule_v2" "public-web-80-ipv6" {
   direction         = "ingress"
   ethertype         = "IPv6"
   protocol          = "tcp"
@@ -30,7 +30,7 @@ resource "openstack_networking_secgroup_rule_v2" "5cbd5183-8918-4d74-aa9b-302ebe
   security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "ef536597-385f-45b1-8895-f0553595c8fz" {
+resource "openstack_networking_secgroup_rule_v2" "public-web-443-ipv6" {
   direction         = "ingress"
   ethertype         = "IPv6"
   protocol          = "tcp"

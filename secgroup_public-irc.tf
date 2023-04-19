@@ -4,7 +4,7 @@ resource "openstack_networking_secgroup_v2" "public-irc" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "6179ae32-e3c4-4a8c-a05a-a45bdd7872f3" {
+resource "openstack_networking_secgroup_rule_v2" "public-irc-ingress-ipv4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"

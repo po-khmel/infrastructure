@@ -10,7 +10,7 @@ variable "web-ports" {
   default     = ["80", "443", "8080"]
 }
 
-resource "openstack_networking_secgroup_rule_v2" "public-web-ports4" {
+resource "openstack_networking_secgroup_rule_v2" "public-web2-ports4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -21,7 +21,7 @@ resource "openstack_networking_secgroup_rule_v2" "public-web-ports4" {
   port_range_max = "${element(var.web-ports, count.index)}"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "public-web-ports6" {
+resource "openstack_networking_secgroup_rule_v2" "public-web2-ports6" {
   direction         = "ingress"
   ethertype         = "IPv6"
   protocol          = "tcp"
