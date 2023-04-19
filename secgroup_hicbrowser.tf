@@ -6,7 +6,7 @@ resource "openstack_networking_secgroup_v2" "hicbrowser" {
 
 variable "hic-ports" {
   description = "Web ports"
-  type        = "list"
+  type        = list
   default     = ["80", "443", "8080", "8081"]
 }
 

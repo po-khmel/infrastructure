@@ -26,7 +26,7 @@ resource "aws_route53_record" "galaxyproject-eu" {
 
 # Subdomains are all just CNAMEs for galaxyproject.eu → proxy-external
 variable "subdomain" {
-  type = "list"
+  type = list
 
   default = [
     # Please place new subdomains at the end of the list and increase the counter `count` below
@@ -80,7 +80,7 @@ resource "aws_route53_record" "subdomains" {
 
 # Subdomains for Project → proxy-external
 variable "subdomain-project" {
-  type = "list"
+  type = list
 
   default = [
     "status.galaxyproject.eu",
@@ -101,7 +101,7 @@ resource "aws_route53_record" "subdomains-project" {
 
 # Subdomains for Project → proxy-internal
 variable "subdomain-internal" {
-  type = "list"
+  type = list
 
   default = [
     # Please place new subdomains at the end of the list
