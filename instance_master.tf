@@ -2,7 +2,7 @@
 resource "openstack_compute_instance_v2" "mastervm" {
   name            = "usegalaxy.controlvm"
   image_id        = "${var.ubuntu20-04_image}"
-  flavor_name     = "small"
+  flavor_name     = "m1.small"
   key_pair        = "cloud" 
   security_groups = ["egress", "public-ssh","default"]
 

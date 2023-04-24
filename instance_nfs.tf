@@ -2,7 +2,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
 
   name            = "usegalaxy.condor-nfs"
   image_name      = "${var.vgcn_image.name}"
-  flavor_name     = "medium"
+  flavor_name     = "m1.medium"
   key_pair        = "cloud"
   security_groups = ["public"]
 
