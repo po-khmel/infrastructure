@@ -9,6 +9,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   network {
     name = "elixir-network"
   }
+
   block_device {
     uuid                  = "${var.vgcn_image.id}"
     source_type           = "image"
@@ -18,7 +19,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   }
 
   block_device {
-    uuid                  = openstack_blockstorage_volume_v2.nfs_volume.id
+    uuid                  = "${openstack_blockstorage_volume_v2.nfs_volume.id}"
     source_type           = "volume"
     destination_type      = "volume"
     boot_index            = -1
@@ -26,6 +27,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   }
   user_data = file("files/create_share.sh")
 }
+
 resource "openstack_blockstorage_volume_v2" "nfs_volume" {
   name        = "nfs"
   description = "nfs volume"
