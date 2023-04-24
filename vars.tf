@@ -21,8 +21,8 @@ variable "ubuntu20-04_image" {
 variable "vgcn_image"{
   type = map
   default= { 
-    "name" = "vggp-v60-j225-1a1df01ec8f3-dev"
-    "id" = "a2291cc6-4947-4d3c-870e-16e0afccaa75"
+    "name" = "vggp-v40-j214-495f8c33c4b0-master"
+    "id" = "dd38d091-6dfb-4c0a-a18c-9be041db70ef"
   }
 }
 
