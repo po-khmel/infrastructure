@@ -7,7 +7,7 @@
 - Be careful.
 - Terraform catches some mistakes but not all
 
------
+---
 
 This infrastructure repo will run in Jenkins on cron, to ensure our infrastructure (Cloud VMs etc ...)
 matches exactly what it should.
@@ -55,9 +55,9 @@ resource "openstack_compute_instance_v2" "apollo-usegalaxy" {
   name            = "apollo.usegalaxy.eu"
 
   # We have several variables for you to choose from in the vars.tf file.
-  image_name      = "${var.centos_image}"
+  image_name      = "${var.centos_image.name}"
 
-  flavor_name     = "m1.large"
+  flavor_name     = "fl.ada.l"
   key_pair        = "cloud2"
 
   # You can define this as a list or use the var.sg_webservice for all of the

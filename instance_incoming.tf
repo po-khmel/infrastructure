@@ -2,7 +2,7 @@
 # resource "openstack_compute_instance_v2" "ftp" {
 #   name        = "usegalaxy.ftp"
 #   image_name  = "${var.centos_image.name}"
-#   flavor_name = "m1.small"
+#   flavor_name = "fl.ada.s"
 #   key_pair    = "cloud"
 
 #   # TODO: tighten up secgroups
