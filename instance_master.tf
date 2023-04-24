@@ -7,10 +7,10 @@ resource "openstack_compute_instance_v2" "mastervm" {
   security_groups = ["egress", "public-ssh","default"]
 
   network {
-    name = "public_net"
+    name = "externalNetwork"
   }
 
   network {
-    name = "private_net"
+    name = "elixir-network"
   }
 }

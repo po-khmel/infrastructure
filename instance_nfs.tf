@@ -7,7 +7,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   security_groups = ["public"]
 
   network {
-    name = "private_net"
+    name = "elixir-network"
   }
   block_device {
     uuid                  = "${var.vgcn_image.id}"

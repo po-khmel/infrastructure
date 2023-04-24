@@ -6,10 +6,10 @@ resource "openstack_compute_instance_v2" "galaxy" {
   security_groups = ["egress", "public-web2", "public-ping","default","public-ssh"]
 
   network {
-    name = "public_net"
+    name = "externalNetwork"
   }
   network {
-    name = "private_net"
+    name = "elixir-network"
   }
 }
 

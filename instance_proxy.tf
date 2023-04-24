@@ -6,7 +6,7 @@ resource "openstack_compute_instance_v2" "rabbitmq" {
   security_groups = ["egress", "public-ssh", "public-ping", "public-web2", "public-amqp","default"]
 
   network {
-    name = "public_net"
+    name = "externalNetwork"
   }
 }
 

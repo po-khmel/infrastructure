@@ -9,10 +9,10 @@
 #   security_groups = ["egress", "public-ssh", "public-web2", "public-ftp","default"]
 # ##mettere prima pubblica poi privata ReCaS stuff
 #   network {
-#     name = "public_net"
+#     name = "externalNetwork"
 #   }
 #   network {
-#     name = "private_net"
+#     name = "elixir-network"
 #   }
 # }
 

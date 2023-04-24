@@ -6,7 +6,7 @@ resource "openstack_compute_instance_v2" "postgres" {
   security_groups = ["public-ssh","public","default"]
 
   network {
-    name = "private_net"
+    name = "elixir-network"
   }
 }
 

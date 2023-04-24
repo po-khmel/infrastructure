@@ -7,9 +7,9 @@ resource "openstack_compute_instance_v2" "vgcn-cm" {
   security_groups = ["public"]
 
   network {
-    name = "public_net"
+    name = "externalNetwork"
   }
   network {
-    name = "private_net"
+    name = "elixir-network"
   }
 }
