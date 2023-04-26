@@ -31,6 +31,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
 resource "openstack_blockstorage_volume_v2" "nfs_volume" {
   name        = "nfs"
   description = "nfs volume"
+  type        = "__DEFAULT __"
   size        = 200
 }
 
