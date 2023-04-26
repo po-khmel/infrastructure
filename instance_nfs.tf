@@ -28,7 +28,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   user_data = file("files/create_share.sh")
 }
 
-resource "openstack_blockstorage_volume_v2" "nfs_volume" {
+resource "openstack_blockstorage_volume_v3" "nfs_volume" {
   name        = "nfs"
   description = "nfs volume"
   volume_type = "__DEFAULT__"
