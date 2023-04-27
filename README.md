@@ -10,7 +10,7 @@
 - check `image.tf` and comment out if you have needed vgcn_image uploaded
 - `terraform init`
 - `terraform plan` or/then `terraform apply`
-- output will produce necessary IPs for next step
+- output will produce necessary IPs for the next step
 
 # UseGalaxy.eu Infrastructure [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Finfrastructure)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/infrastructure/)
 
