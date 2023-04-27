@@ -1,6 +1,6 @@
 resource "openstack_compute_instance_v2" "postgres" {
   name            = "usegalaxy.database" 
-  image_id        = "${var.ubuntu20-04_image.id}"
+  image_id        = "${var.database_image.id}"
   flavor_name     = "${var.flavors.database}"
   key_pair        = "${openstack_compute_keypair_v2.cloud2.name}"
   security_groups = ["public-ssh","public","default"]

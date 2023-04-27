@@ -1,6 +1,6 @@
 resource "openstack_compute_instance_v2" "galaxy" {
   name            = "usegalaxy.galaxy"
-  image_name      = "${var.centos8_image.name}"
+  image_name      = "${var.galaxy_image.name}"
   flavor_name     = "${var.flavors.galaxy}"
   key_pair        = "${openstack_compute_keypair_v2.cloud2.name}"
   security_groups = ["egress", "public-web2", "public-ping","default","public-ssh"]

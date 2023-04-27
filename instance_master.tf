@@ -1,6 +1,6 @@
 # resource "openstack_compute_instance_v2" "mastervm" {
 #   name            = "usemastervm.controlvm"
-#   image_id        = "${var.ubuntu20-04_image.id}"
+#   image_id        = "${var.controlvm_image.id}"
 #   flavor_name     = "${var.flavors.controlvm}"
 #   key_pair        = "${openstack_compute_keypair_v2.cloud2.name}" 
 #   security_groups = ["egress", "public-ssh","default"]
