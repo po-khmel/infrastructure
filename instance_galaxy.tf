@@ -1,21 +1,21 @@
 resource "openstack_compute_instance_v2" "galaxy" {
   name            = "usegalaxy.galaxy"
   image_name      = "${var.centos8_image.name}"
-  flavor_name     = "fl.ada.l"
-  key_pair        = "cloud"
+  flavor_name     = "${var.flavors.galaxy}"
+  key_pair        = "${openstack_compute_keypair_v2.cloud2.name}"
   security_groups = ["egress", "public-web2", "public-ping","default","public-ssh"]
 
   # network {
-  #   name = "externalNetwork"
+  #   name = "${var.public_network.name}"
   # }
 
   network {
-    name = "elixir-network"
+    name = "${var.private_network.name}"
   }
 }
 
 resource "openstack_networking_floatingip_v2" "galaxy_fl_ip" {
-  pool = "externalNetwork"
+  pool = "${var.public_network.name}"
 }
 
 resource "openstack_compute_floatingip_associate_v2" "galaxy_fl_ip" {

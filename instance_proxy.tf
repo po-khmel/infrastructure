@@ -1,22 +1,21 @@
 resource "openstack_compute_instance_v2" "rabbitmq" {
   name            = "usegalaxy.rabbitmq"
   image_name      = "${var.centos8_image.name}"
-  flavor_name     = "fl.ada.s"
-  key_pair        = "cloud"
+  flavor_name     = "${var.flavors.rabbitmq}"
+  key_pair        = "${openstack_compute_keypair_v2.cloud2.name}"
   security_groups = ["egress", "public-ssh", "public-ping", "public-web2", "public-amqp","default"]
 
   # network {
-  #   name = "externalNetwork"
+  #   name = "${var.public_network.name}"
   # }
 }
 
 resource "openstack_networking_floatingip_v2" "rabbitmq_fl_ip" {
-  pool = "externalNetwork"
+  pool = "${var.public_network.name}"
 }
 
 resource "openstack_compute_floatingip_associate_v2" "rabbitmq_fl_ip" {
   floating_ip = "${openstack_networking_floatingip_v2.rabbitmq_fl_ip.address}"
   instance_id = "${openstack_compute_instance_v2.rabbitmq.id}"
-  # fixed_ip    = "${openstack_compute_instance_v2.rabbitmq.network.0.fixed_ip_v4}"
 }
 

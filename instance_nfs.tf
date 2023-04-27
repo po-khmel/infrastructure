@@ -1,13 +1,12 @@
 resource "openstack_compute_instance_v2" "nfs-server" {
-
   name            = "usegalaxy.condor-nfs"
   image_name      = "${var.vgcn_image.name}"
-  flavor_name     = "fl.ada.m"
-  key_pair        = "cloud"
+  flavor_name     = "${var.flavors.nfs-server}"
+  key_pair        = "${openstack_compute_keypair_v2.cloud2.name}"
   security_groups = ["public"]
 
   network {
-    name = "elixir-network"
+    name = "${var.private_network.name}"
   }
 
   block_device {
@@ -29,10 +28,10 @@ resource "openstack_compute_instance_v2" "nfs-server" {
 }
 
 resource "openstack_blockstorage_volume_v3" "nfs_volume" {
-  name        = "nfs"
-  description = "nfs volume"
-  volume_type = "__DEFAULT__"
-  size        = 200
+  name        = "${var.nfs.name}"
+  description = "${var.nfs.description}"
+  volume_type = "${var.nfs.volume_type}"
+  size        = "${var.nfs.disk_size}"
 }
 
 #data "template_cloudinit_config" "nfs-share" {
