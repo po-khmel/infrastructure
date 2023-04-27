@@ -1,3 +1,4 @@
+### CHANGE TO YOUR CLOUD VARS ###
 # variable "centos_image" {
 #   default = "vggp-v31-j132-4ab83d5ffde9-master" # ftp image
 # }
@@ -21,8 +22,10 @@ variable "ubuntu20-04_image" {
 variable "vgcn_image"{
   type = map
   default= { 
-    "name" = "vggp-v40-j214-495f8c33c4b0-master"
-    "id" = "dd38d091-6dfb-4c0a-a18c-9be041db70ef"
+    "name"             = "vggp-v40-j214-495f8c33c4b0-master"
+    "image_source_url" = "https://usegalaxy.eu/static/vgcn/vggp-v40-j214-495f8c33c4b0-master"  
+    "container_format" = "bare"
+    "disk_format"      = "raw"
   }
 }
 
@@ -63,6 +66,7 @@ variable "flavors" {
   }
 }
 
+# add here your newly generated public key
 variable "public_key" {
   type = map
   default = {
