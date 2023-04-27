@@ -6,16 +6,16 @@
 variable "galaxy_image" {
   type = map
   default = {
-    "name" = "CentOS-8-GenericCloud-8.4.2105-20210603.0.x86_64"
-    "id"   = "b3282e0e-0848-453b-9ff4-f799222ed82f"
+    "name" = "vggp-v31-j132-4ab83d5ffde9-master" # centos7
+    "id"   = "a67a7f2a-2be9-4e68-9204-548aca6deddc"
   }
 }
 
 variable "rabbitmq_image" {
   type = map
   default = {
-    "name" = "CentOS-8-GenericCloud-8.4.2105-20210603.0.x86_64"
-    "id"   = "b3282e0e-0848-453b-9ff4-f799222ed82f"
+    "name" = "Ubuntu Server 20.04 LTS (Focal Fossa)"
+    "id"   = "0f22f335-8175-4e68-b730-44b8d2c1973d"
   }
 }
 
@@ -38,8 +38,8 @@ variable "controlvm_image" {
 variable "vgcn_image"{
   type = map
   default= { 
-    "name"             = "vggp-v40-j214-495f8c33c4b0-master"
-    "image_source_url" = "https://usegalaxy.eu/static/vgcn/vggp-v40-j214-495f8c33c4b0-master"  
+    "name"             = "vggp-v60-j326-d1dfcf46c4cd-main.raw"
+    "image_source_url" = "https://usegalaxy.eu/static/vgcn/vggp-v60-j326-d1dfcf46c4cd-main.raw"  
     "container_format" = "bare"
     "disk_format"      = "raw"
   }
