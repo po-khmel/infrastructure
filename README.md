@@ -1,3 +1,15 @@
+## Terraform code to build minimal UseGalaxy infrastructure on Openstack
+
+## HOW TO RUN
+
+1. Install terraform >= 1.43.0
+2. run in your default dir `source <openstack_RC_file.sh>`
+3. go inside `/infrastructure` if not yet done
+4. check `vars.tf` and populate with your variables
+5. `terraform init`
+6. `terraform plan` or/then `terraform apply`
+7. output will produce necessary IPs for next step
+
 # UseGalaxy.eu Infrastructure [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Finfrastructure)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/infrastructure/)
 
 **ACHTUNG** **ACHTUNG** **ACHTUNG**
