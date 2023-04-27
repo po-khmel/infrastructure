@@ -39,6 +39,7 @@ variable "vgcn_image"{
   type = map
   default= { 
     "name"             = "vggp-v60-j326-d1dfcf46c4cd-main.raw"
+    "id"               = "dadc6079-84ca-4b0b-8f71-a3c2676b2063" # comment out when upload by image.tf
     "image_source_url" = "https://usegalaxy.eu/static/vgcn/vggp-v60-j326-d1dfcf46c4cd-main.raw"  
     "container_format" = "bare"
     "disk_format"      = "raw"
