@@ -41,6 +41,6 @@ output "rabbitmq_fl_ip" {
 #     value = "${openstack_compute_instance_v2.vgcn-cm.network[0].fixed_ip_v4}"
 # }
 
-output "centralmanager_fl_ip" {
+output "centra-lmanager_fl_ip" {
   value = "${openstack_networking_floatingip_v2.vgcn_fl_ip.address}"
 }
