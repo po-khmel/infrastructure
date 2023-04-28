@@ -11,5 +11,5 @@ resource "openstack_networking_secgroup_rule_v2" "public-amqp-rule1" {
   remote_ip_prefix  = "0.0.0.0/0"
   port_range_min    = "5671"
   port_range_max    = "5671"
-  security_group_id = "${openstack_networking_secgroup_v2.public-amqp.id}"
+  security_group_id = data.openstack_networking_secgroup_v2.public-amqp.id
 }

@@ -1,16 +1,16 @@
 resource "openstack_compute_instance_v2" "nfs-server" {
   name            = "usegalaxy.condor-nfs"
-  image_name      = "${var.vgcn_image.name}"
-  flavor_name     = "${var.flavors.nfs-server}"
-  key_pair        = "${openstack_compute_keypair_v2.cloud2.name}"
+  image_name      = data.openstack_images_image_v2.vgcn-image.name
+  flavor_name     = var.flavors.nfs-server
+  key_pair        = data.openstack_compute_keypair_v2.cloud2.name
   security_groups = ["public"]
 
   network {
-    name = "${var.private_network.name}"
+    name = var.private_network.name
   }
 
   block_device {
-    uuid                  = "${var.vgcn_image.id}"
+    uuid                  = data.openstack_images_image_v2.rocky-image.id ### !!!
     source_type           = "image"
     destination_type      = "local"
     boot_index            = 0
@@ -18,7 +18,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   }
 
   block_device {
-    uuid                  = "${openstack_blockstorage_volume_v3.nfs_volume.id}"
+    uuid                  = data.openstack_blockstorage_volume_v3.nfs_volume.id
     source_type           = "volume"
     destination_type      = "volume"
     boot_index            = -1
@@ -28,22 +28,22 @@ resource "openstack_compute_instance_v2" "nfs-server" {
 }
 
 resource "openstack_blockstorage_volume_v3" "nfs_volume" {
-  name        = "${var.nfs.name}"
-  description = "${var.nfs.description}"
-  volume_type = "${var.nfs.volume_type}"
-  size        = "${var.nfs.disk_size}"
+  name        = var.nfs.name
+  description = var.nfs.description
+  volume_type = var.nfs.volume_type
+  size        = var.nfs.disk_size
 }
 
-#data "template_cloudinit_config" "nfs-share" {
+# data "template_cloudinit_config" "nfs-share" {
 #  gzip          = true
 #  base64_encode = true
-#
+
 #  part {
 #    content_type = "text/x-shellscript"
 #    content      = file("${path.module}/files/create_share.sh")
 #  }
 
-#}
+# }
 
 
 

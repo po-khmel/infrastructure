@@ -8,5 +8,5 @@ resource "openstack_networking_secgroup_rule_v2" "public-ping_rule1" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "icmp"
-  security_group_id = "${openstack_networking_secgroup_v2.public-ping.id}"
+  security_group_id = data.openstack_networking_secgroup_v2.public-ping.id
 }

@@ -9,7 +9,7 @@ resource "openstack_networking_secgroup_rule_v2" "public-web_rule1" {
   protocol          = "tcp"
   port_range_min    = "80"
   port_range_max    = "80"
-  security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
+  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
 }
 
 resource "openstack_networking_secgroup_rule_v2" "public-web_rule2" {
@@ -18,7 +18,7 @@ resource "openstack_networking_secgroup_rule_v2" "public-web_rule2" {
   protocol          = "tcp"
   port_range_min    = "443"
   port_range_max    = "443"
-  security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
+  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
 }
 
 resource "openstack_networking_secgroup_rule_v2" "public-web_rule3" {
@@ -27,7 +27,7 @@ resource "openstack_networking_secgroup_rule_v2" "public-web_rule3" {
   protocol          = "tcp"
   port_range_min    = "80"
   port_range_max    = "80"
-  security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
+  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
 }
 
 resource "openstack_networking_secgroup_rule_v2" "public-web_rule4" {
@@ -36,5 +36,5 @@ resource "openstack_networking_secgroup_rule_v2" "public-web_rule4" {
   protocol          = "tcp"
   port_range_min    = "443"
   port_range_max    = "443"
-  security_group_id = "${openstack_networking_secgroup_v2.public-web.id}"
+  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
 }
