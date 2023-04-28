@@ -10,7 +10,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   }
 
   block_device {
-    uuid                  = data.openstack_images_image_v2.rocky-image.id ### !!!
+    uuid                  = data.openstack_images_image_v2.rocky-image.id
     source_type           = "image"
     destination_type      = "local"
     boot_index            = 0
