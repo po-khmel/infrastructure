@@ -31,6 +31,7 @@ override.tf.json
 # End of https://www.gitignore.io/api/terraform
 .venv
 .vault_password
+.terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
 galaxy-it
