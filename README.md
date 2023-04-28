@@ -1,4 +1,4 @@
-## Terraform code to build minimal UseGalaxy infrastructure on Openstack
+# Terraform code to build minimal UseGalaxy infrastructure on Openstack
 
 ## HOW TO RUN
 
@@ -12,7 +12,7 @@
 - `terraform plan` or/then `terraform apply`
 - output will produce necessary IPs for the next step
 
-# UseGalaxy.eu Infrastructure [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Finfrastructure)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/infrastructure/)
+## UseGalaxy.eu Infrastructure [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Finfrastructure)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/infrastructure/)
 
 **ACHTUNG** **ACHTUNG** **ACHTUNG**
 
