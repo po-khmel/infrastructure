@@ -1,40 +1,27 @@
 resource "openstack_networking_secgroup_v2" "public-web" {
-  name        = "public-web"
-  description = "[tf] Allow public HTTP + HTTPS connections"
+  name                 = "public-web2"
+  description          = "[tf] Allow public HTTP + HTTPS connections (fixed)"
+  delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "public-web_rule1" {
+resource "openstack_networking_secgroup_rule_v2" "public-web-ports4" {
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
-  port_range_min    = "80"
-  port_range_max    = "80"
-  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
+  security_group_id = data.openstack_networking_secgroup_v2.public-web2.id
+
+  count          = 3
+  port_range_min = element(var.web-ports, count.index)
+  port_range_max = element(var.web-ports, count.index)
 }
 
-resource "openstack_networking_secgroup_rule_v2" "public-web_rule2" {
-  direction         = "ingress"
-  ethertype         = "IPv4"
-  protocol          = "tcp"
-  port_range_min    = "443"
-  port_range_max    = "443"
-  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
-}
-
-resource "openstack_networking_secgroup_rule_v2" "public-web_rule3" {
+resource "openstack_networking_secgroup_rule_v2" "public-web-ports6" {
   direction         = "ingress"
   ethertype         = "IPv6"
   protocol          = "tcp"
-  port_range_min    = "80"
-  port_range_max    = "80"
-  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
-}
+  security_group_id = data.openstack_networking_secgroup_v2.public-web2.id
 
-resource "openstack_networking_secgroup_rule_v2" "public-web_rule4" {
-  direction         = "ingress"
-  ethertype         = "IPv6"
-  protocol          = "tcp"
-  port_range_min    = "443"
-  port_range_max    = "443"
-  security_group_id = data.openstack_networking_secgroup_v2.public-web.id
+  count          = 3
+  port_range_min = element(var.web-ports, count.index)
+  port_range_max = element(var.web-ports, count.index)
 }

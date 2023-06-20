@@ -3,11 +3,14 @@ resource "openstack_compute_instance_v2" "rabbitmq" {
   image_name      = var.ubuntu_image.name
   flavor_name     = var.flavors.rabbitmq
   key_pair        = data.openstack_compute_keypair_v2.cloud2.name
-  security_groups = ["egress", "public-ssh", "public-ping", "public-web2", "public-amqp", "default"]
+  security_groups = ["public-ssh", "public-ping", "public-amqp", "egress"]
 
   # network {
   #   name = var.public_network.name
   # }
+  network {
+    name = var.private_network.name
+  }
 }
 
 resource "openstack_networking_floatingip_v2" "rabbitmq_fl_ip" {

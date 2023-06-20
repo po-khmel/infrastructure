@@ -3,7 +3,7 @@ resource "openstack_compute_instance_v2" "mastervm" {
   image_name      = var.controlvm_image.name
   flavor_name     = var.flavors.controlvm
   key_pair        = data.openstack_compute_keypair_v2.cloud2.name
-  security_groups = ["egress", "public-ssh", "default"]
+  security_groups = ["public-ssh", "egress"]
 
   # network {
   #   name = var.public_network.name

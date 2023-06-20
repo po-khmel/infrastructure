@@ -3,7 +3,7 @@ resource "openstack_compute_instance_v2" "vgcn-cm" {
   image_name      = data.openstack_images_image_v2.vgcn-image.name
   flavor_name     = var.flavors.central-manager
   key_pair        = data.openstack_compute_keypair_v2.cloud2.name
-  security_groups = ["public"]
+  security_groups = ["public-condor", "public-ssh", "egress", "public-ping"]
 
   # network {
   #   name = var.public_network.name

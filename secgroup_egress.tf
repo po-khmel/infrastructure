@@ -4,14 +4,14 @@ resource "openstack_networking_secgroup_v2" "egress" {
   delete_default_rules = "true"
 }
 
-resource "openstack_networking_secgroup_rule_v2" "egress_rule1" {
+resource "openstack_networking_secgroup_rule_v2" "egress_rule4" {
   direction         = "egress"
-  ethertype         = "IPv6"
+  ethertype         = "IPv4"
   security_group_id = data.openstack_networking_secgroup_v2.egress.id
 }
 
-resource "openstack_networking_secgroup_rule_v2" "egress_rule2" {
+resource "openstack_networking_secgroup_rule_v2" "egress_rule6" {
   direction         = "egress"
-  ethertype         = "IPv4"
+  ethertype         = "IPv6"
   security_group_id = data.openstack_networking_secgroup_v2.egress.id
 }
