@@ -12,6 +12,19 @@
 - `terraform plan` or/then `terraform apply`
 - output will produce necessary IPs for the next step
 
+## Security groups
+
+|     VM      | Open connectons                                           |
+| :---------: | :-------------------------------------------------------- |
+|  Database   | ssh, 5432 (default postgres)                              |
+|   Backup    | ssh                                                       |
+|   Replica   | ssh, 5432 (default postgres)                              |
+| HTCondor CM | ssh, ping, 9618 (default htcondor)                        |
+| NFS server  | ssh                                                       |
+|  RabbitMQ   | ssh, ping, 5671 (default mq), 15672 (UI)                  |
+|   Galaxy    | ssh, ping, [80, 443, 8080] (web), 9618 (default htcondor) |
+| Control VM  | ssh                                                       |
+
 ## UseGalaxy.eu Infrastructure [![Build Status](https://build.galaxyproject.eu/buildStatus/icon?job=usegalaxy-eu%2Finfrastructure)](https://build.galaxyproject.eu/job/usegalaxy-eu/job/infrastructure/)
 
 **ACHTUNG** **ACHTUNG** **ACHTUNG**
