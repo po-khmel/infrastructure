@@ -23,6 +23,16 @@ output "database" {
 }
 
 # private_ip
+output "replica" {
+  value = data.openstack_compute_instance_v2.replica.network[0].fixed_ip_v4
+}
+
+# private_ip
+output "backup" {
+  value = data.openstack_compute_instance_v2.backup.network[0].fixed_ip_v4
+}
+
+# private_ip
 output "rabbitmq" {
   value = data.openstack_compute_instance_v2.rabbitmq.network[0].fixed_ip_v4
 }
