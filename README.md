@@ -14,7 +14,7 @@
 
 ## Security groups
 
-|     VM      | Open connectons                                           |
+|     VM      | Open connections                                           |
 | ----------- | --------------------------------------------------------- |
 |  Database   | ssh, 5432 (default postgres)                              |
 |   Backup    | ssh                                                       |
