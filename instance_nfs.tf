@@ -1,8 +1,8 @@
 resource "openstack_compute_instance_v2" "nfs-server" {
-  name            = "usegalaxy.condor-nfs"
+  name            = "usegalaxy-it.condor-nfs"
   image_name      = data.openstack_images_image_v2.vgcn-image.name
   flavor_name     = var.flavors.nfs-server
-  key_pair        = data.openstack_compute_keypair_v2.cloud.name
+  key_pair        = openstack_compute_keypair_v2.cloud.name
   security_groups = ["public-ssh", "egress"]
 
   network {
@@ -18,7 +18,7 @@ resource "openstack_compute_instance_v2" "nfs-server" {
   }
 
   block_device {
-    uuid                  = data.openstack_blockstorage_volume_v3.nfs_volume.id
+    uuid                  = openstack_blockstorage_volume_v3.nfs_volume.id
     source_type           = "volume"
     destination_type      = "volume"
     boot_index            = -1

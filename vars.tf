@@ -1,16 +1,7 @@
 ### CHANGE TO YOUR CLOUD VARS ###
-variable "ubuntu_image" {
-  type = map(any)
-  default = {
-    "name" = "Ubuntu Server 20.04 LTS (Focal Fossa)"
-    "id"   = "0f22f335-8175-4e68-b730-44b8d2c1973d"
-  }
-}
-
 variable "vgcn_image" {
   type = map(any)
   default = {
-    # "id"               = "dadc6079-84ca-4b0b-8f71-a3c2676b2063" # comment out when upload by image.tf
     "name"             = "vggp-v60-j225-1a1df01ec8f3-dev.raw"
     "image_source_url" = "https://usegalaxy.eu/static/vgcn/vggp-v60-j225-1a1df01ec8f3-dev.raw"
     "container_format" = "bare"
@@ -22,12 +13,11 @@ variable "vgcn_image" {
 variable "rocky9_image" {
   type = map(any)
   default = {
-    # "id"               = "dadc6079-84ca-4b0b-8f71-a3c2676b2063" # comment out when upload by image.tf
     "name"             = "Rocky-9-GenericCloud.latest.x86_64"
     "image_source_url" = "https://download.rockylinux.org/pub/rocky/9/images/x86_64/Rocky-9-GenericCloud.latest.x86_64.qcow2"
     "container_format" = "bare"
     "disk_format"      = "QCOW2"
-    "description"      = "downloaded from https://download.rockylinux.org/pub/rocky/9/images/x86_64/"
+    "description"      = "downloaded from https://download.rockylinux.org"
   }
 }
 
@@ -63,7 +53,7 @@ variable "flavors" {
     "replica"         = "fl.ada.s"
     "backup"          = "fl.ada.s"
     "galaxy"          = "fl.ada.l"
-    "controlvm"       = "fl.ada.s"
+    "mastervm"        = "fl.ada.s"
     "nfs-server"      = "fl.ada.m"
     "rabbitmq"        = "fl.ada.s"
     "ftp"             = "fl.ada.s"

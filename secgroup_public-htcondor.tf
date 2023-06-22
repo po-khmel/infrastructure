@@ -11,7 +11,7 @@ resource "openstack_networking_secgroup_rule_v2" "public-condor-rule4" {
   remote_ip_prefix  = "0.0.0.0/0"
   port_range_min    = "9618"
   port_range_max    = "9618"
-  security_group_id = data.openstack_networking_secgroup_v2.condor.id
+  security_group_id = openstack_networking_secgroup_v2.condor.id
 }
 
 resource "openstack_networking_secgroup_rule_v2" "public-condor-rule6" {
@@ -21,5 +21,5 @@ resource "openstack_networking_secgroup_rule_v2" "public-condor-rule6" {
   remote_ip_prefix  = "0.0.0.0/0"
   port_range_min    = "9618"
   port_range_max    = "9618"
-  security_group_id = data.openstack_networking_secgroup_v2.condor.id
+  security_group_id = openstack_networking_secgroup_v2.condor.id
 }

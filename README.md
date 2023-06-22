@@ -1,4 +1,4 @@
-# Terraform code to build minimal UseGalaxy infrastructure on OpenStack
+# Terraform code to build minimal usegalaxy-it infrastructure on OpenStack
 
 ## HOW TO RUN
 
@@ -14,14 +14,14 @@
 
 ## Security groups
 
-|     VM      | Open connections                                           |
+| VM          | Open connections                                          |
 | ----------- | --------------------------------------------------------- |
-|  Database   | ssh, 5432 (default postgres)                              |
-|   Backup    | ssh                                                       |
-|   Replica   | ssh, 5432 (default postgres)                              |
+| Database    | ssh, 5432 (default postgres)                              |
+| Backup      | ssh                                                       |
+| Replica     | ssh, 5432 (default postgres)                              |
 | HTCondor CM | ssh, ping, 9618 (default htcondor)                        |
 | NFS server  | ssh                                                       |
-|  RabbitMQ   | ssh, ping, 5671 (default mq), 15672 (UI)                  |
-|   Galaxy    | ssh, ping, [80, 443, 8080] (web), 9618 (default htcondor) |
+| RabbitMQ    | ssh, ping, 5671 (default mq), 15672 (UI)                  |
+| Galaxy      | ssh, ping, [80, 443, 8080] (web), 9618 (default htcondor) |
 | Control VM  | ssh                                                       |
 

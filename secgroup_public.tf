@@ -7,7 +7,7 @@ resource "openstack_networking_secgroup_v2" "public" {
 resource "openstack_networking_secgroup_rule_v2" "public_rule3" {
   direction         = "egress"
   ethertype         = "IPv6"
-  security_group_id = data.openstack_networking_secgroup_v2.public.id
+  security_group_id = openstack_networking_secgroup_v2.public.id
 }
 
 resource "openstack_networking_secgroup_rule_v2" "public_rule4" {

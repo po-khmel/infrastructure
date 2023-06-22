@@ -11,7 +11,7 @@ resource "openstack_networking_secgroup_rule_v2" "private-db-rule4" {
   remote_ip_prefix  = "0.0.0.0/0"
   port_range_min    = "5432"
   port_range_max    = "5432"
-  security_group_id = data.openstack_networking_secgroup_v2.db.id
+  security_group_id = openstack_networking_secgroup_v2.db.id
 }
 
 resource "openstack_networking_secgroup_rule_v2" "private-db-rule6" {
@@ -21,5 +21,5 @@ resource "openstack_networking_secgroup_rule_v2" "private-db-rule6" {
   remote_ip_prefix  = "0.0.0.0/0"
   port_range_min    = "5432"
   port_range_max    = "5432"
-  security_group_id = data.openstack_networking_secgroup_v2.db.id
+  security_group_id = openstack_networking_secgroup_v2.db.id
 }
