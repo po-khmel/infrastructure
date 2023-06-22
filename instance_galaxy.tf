@@ -2,7 +2,7 @@ resource "openstack_compute_instance_v2" "galaxy" {
   name            = "usegalaxy.galaxy"
   image_name      = data.openstack_images_image_v2.rocky-image.name
   flavor_name     = var.flavors.galaxy
-  key_pair        = data.openstack_compute_keypair_v2.cloud2.name
+  key_pair        = data.openstack_compute_keypair_v2.cloud.name
   security_groups = ["egress", "public-web", "public-ssh", "public-ping", "public-condor"]
 
   # network {

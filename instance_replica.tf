@@ -2,7 +2,7 @@ resource "openstack_compute_instance_v2" "replica" {
   name            = "usegalaxy.database"
   image_name      = data.openstack_images_image_v2.rocky-image.name
   flavor_name     = var.flavors.replica
-  key_pair        = data.openstack_compute_keypair_v2.cloud2.name
+  key_pair        = data.openstack_compute_keypair_v2.cloud.name
   security_groups = ["public-ssh", "private-db", "egress"]
 
   network {

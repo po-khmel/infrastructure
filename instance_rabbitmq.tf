@@ -2,7 +2,7 @@ resource "openstack_compute_instance_v2" "rabbitmq" {
   name            = "usegalaxy.rabbitmq"
   image_name      = var.ubuntu_image.name
   flavor_name     = var.flavors.rabbitmq
-  key_pair        = data.openstack_compute_keypair_v2.cloud2.name
+  key_pair        = data.openstack_compute_keypair_v2.cloud.name
   security_groups = ["public-ssh", "public-ping", "public-amqp", "egress"]
 
   # network {
